@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2 #atributo de classe
+
     def __init__(self, *filhos, nome=None, idade=30):
         self.idade = idade
         self.nome = nome
@@ -18,8 +20,14 @@ if __name__ == '__main__':
     print(herculano.idade)
     for filho in herculano.filhos:
         print(filho.nome)
-    wagner.sobrenome = 'dos Santos'
+    wagner.sobrenome = 'dos Santos'  # atributo de instancia
     del wagner.filhos
+    herculano.olhos = 1
+    del herculano.olhos  # Deleta atributo do objeto e não da classe
     print(wagner.__dict__)
     print(herculano.__dict__)
-    # print(wagner.sobrenome)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(herculano.olhos)
+    print(wagner.olhos)
+    print(id(Pessoa.olhos), id(wagner.olhos), id(herculano.olhos))
