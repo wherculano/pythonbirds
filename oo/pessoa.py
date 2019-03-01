@@ -14,9 +14,13 @@ class Homem(Pessoa):
     pass
 
 
+class Mutante(Pessoa):
+    olhos = 3
+
+
 if __name__ == '__main__':
-    wagner = Homem(nome='Wagner')
-    herculano = Pessoa(wagner, nome='Herculano')
+    wagner = Mutante(nome='Wagner')
+    herculano = Homem(wagner, nome='Herculano')
     print(Pessoa.cumprimentar(herculano))
     print(id(herculano))
     print(herculano.cumprimentar())
@@ -30,7 +34,6 @@ if __name__ == '__main__':
     del herculano.olhos  # Deleta atributo do objeto e não da classe
     print(wagner.__dict__)
     print(herculano.__dict__)
-    Pessoa.olhos = 3
     print(Pessoa.olhos)
     print(herculano.olhos)
     print(wagner.olhos)
@@ -40,3 +43,4 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(wagner, Pessoa))
     print(isinstance(wagner, Homem))
+    print(wagner.olhos)
