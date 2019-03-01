@@ -1,5 +1,5 @@
 class Pessoa:
-    olhos = 2 #atributo de classe
+    olhos = 2  # atributo de classe
 
     def __init__(self, *filhos, nome=None, idade=30):
         self.idade = idade
@@ -10,8 +10,12 @@ class Pessoa:
         return f'Olá {id(self)}'
 
 
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    wagner = Pessoa(nome='Wagner')
+    wagner = Homem(nome='Wagner')
     herculano = Pessoa(wagner, nome='Herculano')
     print(Pessoa.cumprimentar(herculano))
     print(id(herculano))
@@ -31,3 +35,8 @@ if __name__ == '__main__':
     print(herculano.olhos)
     print(wagner.olhos)
     print(id(Pessoa.olhos), id(wagner.olhos), id(herculano.olhos))
+    pessoa = Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(wagner, Pessoa))
+    print(isinstance(wagner, Homem))
