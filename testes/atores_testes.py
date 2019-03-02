@@ -42,7 +42,6 @@ class AtorTestes(TestCase):
         self.assertEqual(0.3, x)
         self.assertEqual(0.5, y)
 
-
     def teste_colisao_entre_atores_ativos(self):
         """
         Teste de colisão entre dois atores
@@ -108,7 +107,6 @@ class AtorTestes(TestCase):
         outro_ator_na_mesma_posicao = Ator()
         ator.colidir(outro_ator_na_mesma_posicao)
         self.assertEqual(' ', ator.caracter())
-
 
     def assert_colisao_atores_ativos(self, ator, ator2, intervalo=1):
         """
@@ -202,10 +200,8 @@ class PassaroVermelhoTests(PassaroBaseTests):
         passaro_vermelho.colidir(outro_ator_na_mesma_posicao)
         self.assertEqual('v', passaro_vermelho.caracter())
 
-
     def teste_velocidade_escalar(self):
         self.assertEqual(20, PassaroVermelho.velocidade_escalar)
-
 
     def teste_foi_lancado(self):
         """
@@ -265,10 +261,7 @@ class PassaroAmareloTests(PassaroBaseTests):
         passaro_amarelo = PassaroAmarelo(1, 1)
         passaro_amarelo.lancar(90, 2)  # passaro lancado a 90 graus no tempo 2 segundos
 
-
-
         # subindo
-
         self.assert_posicao_vertical(1, 2.0, passaro_amarelo)
         self.assert_posicao_vertical(1, 2.01, passaro_amarelo)
         self.assert_posicao_vertical(2, 2.02, passaro_amarelo)
@@ -277,7 +270,6 @@ class PassaroAmareloTests(PassaroBaseTests):
         self.assert_posicao_vertical(2, 2.05, passaro_amarelo)
 
         # descendo
-
         self.assert_posicao_vertical(46, 5.26, passaro_amarelo)
         self.assert_posicao_vertical(46, 5.27, passaro_amarelo)
         self.assert_posicao_vertical(46, 5.279999999999999, passaro_amarelo)
